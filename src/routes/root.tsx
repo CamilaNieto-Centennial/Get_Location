@@ -71,7 +71,7 @@ interface MarkerProps {
 
 // Marker Component
 const Marker: React.FC<MarkerProps> = ({  }) => (
-    <div style={{ color: 'red', fontSize: '36px' }}>
+    <div style={{ color: '#B7152A', fontSize: '36px' }}>
         <MdLocationPin />
     </div>
 );
