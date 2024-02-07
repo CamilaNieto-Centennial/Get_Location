@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import GoogleMapReact from 'google-map-react';
+import { MdLocationPin } from "react-icons/md";
 
 function Root() {
 
@@ -47,9 +48,13 @@ function Root() {
                             <GoogleMapReact
                                 bootstrapURLKeys={{ key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY }}
                                 defaultCenter={{ lat: coordinates.latitude, lng: coordinates.longitude }}
-                                defaultZoom={15}
+                                defaultZoom={17}
                             >
-                                {/* You can add markers or other components here */}
+                                {/* Marker Component */}
+                                <Marker
+                                    lat={coordinates.latitude}
+                                    lng={coordinates.longitude}
+                                />
                             </GoogleMapReact>
                         </div>
                     </div>
@@ -58,5 +63,17 @@ function Root() {
         </div>
     )
 }
+
+interface MarkerProps {
+    lat: number;
+    lng: number;
+}
+
+// Marker Component
+const Marker: React.FC<MarkerProps> = ({  }) => (
+    <div style={{ color: 'red', fontSize: '36px' }}>
+        <MdLocationPin />
+    </div>
+);
 
 export default Root;
