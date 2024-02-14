@@ -36,7 +36,7 @@ function Root() {
                         <div className="flex justify-center">
                             <img src="./map_1.png" alt="Map Image" className='size-11/12 h-fit mb-4 sm:size-8/12 sm:h-fit md:size-6/12 md:h-fit lg:size-4/12 lg:h-fit xl:size-3/12 xl:h-fit 2xl:size-2/12 2xl:h-fit' />
                         </div>
-                        <p className="text-lg">Please allow us to assess your location, so we can further help you.</p>
+                        <p className="text-lg">Please allow us to access your location, so we can further help you.</p>
                         <div className="flex justify-center mt-8">
                             <button
                                 className="bg-primary text-white font-medium uppercase py-2 px-10 rounded-3xl hover:bg-primary90"
