@@ -52,6 +52,7 @@ export default {
         primary40: "#F18897",
         primary60: "#EC5A6E",
         primary80: "#E72C45",
+        primary90: "#850F1F",
         secondary: "#003049",
         secondary10: "#47C0FF",
         secondary20: "#14AFFF",

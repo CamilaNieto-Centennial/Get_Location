@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import GoogleMapReact from 'google-map-react';
-import { MdLocationPin } from "react-icons/md";
 
 function Root() {
 
@@ -26,37 +24,25 @@ function Root() {
     };
 
     return (
-        <div>
+        <div className='h-full'>
             <Navbar />
-            <div className="container mx-auto px-4 py-8">
-                <h1 className="text-3xl font-bold mb-8">Welcome to My Location App!</h1>
-                <p className="text-lg mb-6">After allowing GPS location permissions, please click on the button below so we can get your coordinates.</p>
-                <div className="flex justify-center">
+            <div className="h-full pt-24 pb-4 mx-auto px-4 text-center flex flex-col align-middle">
+                <h1 className="text-3xl font-bold mb-6 uppercase">Enable your Location</h1>
+                <img className='size-auto mb-4' src="./map_1.png" alt="Map Image" />
+                <p className="text-lg">Please allow us to assess your location, so we can further help you.</p>
+                <div className="flex justify-center mt-8">
                     <button
-                        className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary80"
+                        className="bg-primary text-white font-medium uppercase py-2 px-16 rounded-lg hover:bg-primary90"
                         onClick={handleGetCoordinates}
                     >
-                        Get Coordinates
+                        Share Location
                     </button>
                 </div>
                 {coordinates && (
-                    <div className="mt-4">
+                    <div className="mt-8">
                         <h2 className="text-xl font-semibold">Your Current Coordinates:</h2>
                         <p>Latitude: {coordinates.latitude}</p>
                         <p>Longitude: {coordinates.longitude}</p>
-                        <div style={{ height: '400px', width: '100%' }}>
-                            <GoogleMapReact
-                                bootstrapURLKeys={{ key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY }}
-                                defaultCenter={{ lat: coordinates.latitude, lng: coordinates.longitude }}
-                                defaultZoom={17}
-                            >
-                                {/* Marker Component */}
-                                <Marker
-                                    lat={coordinates.latitude}
-                                    lng={coordinates.longitude}
-                                />
-                            </GoogleMapReact>
-                        </div>
                     </div>
                 )}
             </div>
@@ -64,16 +50,5 @@ function Root() {
     )
 }
 
-interface MarkerProps {
-    lat: number;
-    lng: number;
-}
-
-// Marker Component
-const Marker: React.FC<MarkerProps> = ({  }) => (
-    <div style={{ color: '#B7152A', fontSize: '36px' }}>
-        <MdLocationPin />
-    </div>
-);
 
 export default Root;
