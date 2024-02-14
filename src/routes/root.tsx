@@ -27,7 +27,7 @@ function Root() {
         <div className='h-full'>
             <Navbar />
             <div className="h-full pt-24 pb-4 mx-auto px-4 text-center flex flex-col align-middle">
-                <h1 className="text-3xl font-bold mb-6 uppercase">Enable your Location</h1>
+                <h1 className="text-3xl font-bold mb-5 uppercase">Enable your Location</h1>
                 <img className='size-auto mb-4' src="./map_1.png" alt="Map Image" />
                 <p className="text-lg">Please allow us to assess your location, so we can further help you.</p>
                 <div className="flex justify-center mt-8">
